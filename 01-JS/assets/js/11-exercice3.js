@@ -18,3 +18,33 @@ function l(e) {
 function w(f) {
     document.write(f);
 }
+
+// -- Déclaration des Variables
+// EstCeQueLeMailEstDansLeTableau = faux;
+var isEmailInArray = false;
+
+// -- 1. Demander à l'utilisateur son email/mot de passe
+var email   = prompt('Bonjour, Quel est votre email ?','<Saisissez votre email>');
+var mdp     = prompt('votre mot de passe ?','<Saisissez votre mot de passe>');
+
+// -- 2. Parcourir l'ensemble des données de mon tableau
+// for(let user of BaseDeDonnees) {...}
+for(let i = 0 ; i < BaseDeDonnees.length ; i++) {
+
+    // -- 2a. Vérifier l'identification de l'utilisateur
+    if(email === BaseDeDonnees[i].email && mdp === BaseDeDonnees[i].mdp) {
+        
+        // -- J'ai trouvé une correspondance
+        isEmailInArray = true;
+        w('Bonjour ' + BaseDeDonnees[i].prenom + ' !');
+
+        // -- Je stop la boucle for, j'ai trouvé ce que je cherche.
+        break;
+    }
+
+}
+
+if(!isEmailInArray) {
+    // -- Aucune correspondance
+    alert('ATTENTION, Email / Mot de Passe incorrect !');
+}
