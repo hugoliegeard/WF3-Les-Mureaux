@@ -1,0 +1,126 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta charset="utf-8">
+        <title>Aujourd'hui, CSS en Folie !</title>
+        <link rel="stylesheet" href="css/styles.css" />
+        <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/font-awesome/4.6.3/css/font-awesome.min.css" />
+        <link href="https://fonts.googleapis.com/css?family=Roboto+Condensed" rel="stylesheet">
+	</head>
+    <body>
+        <div id="page">
+            <!-- En-Tete de mon Site -->
+            <div class="header">
+                <!-- Image d'illustration -->
+                <!--<img src="img/bandeauduhaut.jpg" alt="Illustration du Haut" />-->
+                <div class="BandeauDuHaut">
+                    <a href="index.html" title="Accueil">
+                        <img class="logo" src="img/logoIsen.png" alt="Logo ISEN" />
+                    </a>
+                </div>
+                <!-- Menu du Haut -->
+                <ul>
+                    <li>
+                        <a href="index.html">Accueil</a>
+                    </li>
+                    <li>
+                        <a href="presentation.html">Présentation</a>
+                    </li>
+                    <li class="current">
+                        <a href="contact.html">Contact</a>
+                    </li>
+                </ul>
+            </div>
+
+            <!-- Contenu de mon Site -->
+            <div id="contenu">
+                <!-- Titre HTML -->
+                <h1>Rechercher un Contact</h1>
+                
+                <div class="contenu-page">
+                    <form>
+                        <input type="text" id="search" placeholder="Rechercher un Contact...">
+                    </form>
+                    <div class="resultat">
+                        
+<!--
+                        <div class="membre">
+                            <div class="membre_informations">
+                                <p>Nom Complet :</p>
+                                <p>Username :</p>
+                                <p>Email :</p>
+                                <p>Téléphone :</p>
+                            </div>
+                        </div>
+-->
+                        
+                    </div>
+                </div>
+                
+            </div>
+
+            <!-- Div servant à délimiter mon Pied de Page -->
+            <div id="footer">
+                <!-- Google Map -->
+                <div class="gmap">
+                    <iframe src="https://www.google.com/maps/embed?pb=!1m26!1m12!1m3!1d6018.328253982414!2d3.043297029974231!3d50.638348793967126!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!4m11!3e6!4m3!3m2!1d50.6342784!2d3.0487067999999997!4m5!1s0x47c2d578da129f7d%3A0xd134d73fb7f4c699!2sisen+lille!3m2!1d50.633903!2d3.0486685!5e0!3m2!1sfr!2sfr!4v1473175544939" width="300" height="200" frameborder="0" style="border:0" allowfullscreen></iframe>
+                </div>
+                <!-- Formulaire Newsletter -->
+                <div class="newsletter">
+                    <form>
+                        <fieldset>
+                            <legend>Newsletter</legend>
+                            <input type="email" name="email" placeholder="Adresse Email" />
+                            <input type="text" name="nom" placeholder="Nom" />
+                            <input type="text" name="prenom" placeholder="Prénom" />
+                            <input type="submit" value="M'inscrire !" />
+                        </fieldset>
+                    </form>
+                </div>
+                <!-- Contact -->
+                <div class="contact">
+                    <h3>Contactez-nous</h3>
+                    <address>
+                        <strong>ISEN</strong> <br />
+                        <a href="tel:+596696778919" title="Téléphone"><i class="fa fa-phone" aria-hidden="true"></i> 0696 77 89 19</a><br />
+                        <a href="mailto:wf3@hl-media.fr" title="Adresse Email"><i class="fa fa-envelope" aria-hidden="true"></i> wf3@hl-media.fr</a><br />
+                        41 Boulevard VAUBAN<br />
+                        59000 Lille <br />
+                        FRANCE
+                    </address>
+                </div>
+            </div>
+        </div>
+        
+        
+        <!-- Intégration de jQuery -->
+        <script src="https://code.jquery.com/jquery-3.1.0.js" integrity="sha256-slogkvB1K3VOkzAI8QITxV3VzpOnkeNVsKvtkYLMjfk=" crossorigin="anonymous"></script>
+       
+        <!-- LoDash -->
+        <script src="https://cdnjs.cloudflare.com/ajax/libs/lodash.js/4.17.4/lodash.min.js" integrity="sha256-8E6QUcFg1KTnpEU8TFGhpTGHw5fJqB9vCms3OhAYLqw=" crossorigin="anonymous"></script>
+
+         <!-- Intégration de MarkJS -->
+        <script src="https://cdnjs.cloudflare.com/ajax/libs/mark.js/8.11.0/jquery.mark.min.js" integrity="sha256-1iYR6/Bs+CrdUVeCpCmb4JcYVWvvCUEgpSU7HS5xhsY=" crossorigin="anonymous"></script>    
+
+        <!-- Intégration de mon script -->
+        <script src="js/recherche.js"></script>
+        
+    </body>
+</html>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+

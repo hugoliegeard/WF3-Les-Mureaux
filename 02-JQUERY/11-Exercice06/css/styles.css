@@ -1,0 +1,421 @@
+/* ---------------------
+ Dans cette feuille de style CSS, je vais pouvoir définir l'apparance que je veux donner aux différents éléments que composent ma page.
+
+### La Syntaxe ###
+
+element {
+    propriete:valeur;
+}
+
+------------------------ */
+
+a, h1, h3 {
+    font-family: 'Roboto Condensed', sans-serif;
+}
+
+table {
+    font-family: Arial, sans-serif;
+    font-size: 14px;
+}
+
+/* ---------------------
+
+    ### Cibler via la Classe de l'Element ###
+    NB : Une même classe peut-être présente plusieurs fois sur une même page.
+
+.LaClasse {
+    propriete:valeur;
+}
+
+CONSIGNE :
+
+    1 - Tous les liens de classe HEADER en Noir
+    2 - Non souligné
+    3 - Affiché en Ligne via la propriété display */
+
+/* ---------------------
+Ici, je cible tous les liens présent dans la div class header
+--------------------- */
+.header a {
+    /* -- Plusieurs façon de définir une couleur -- */
+    
+    /* -- Mot Clé de la Couleur -- */
+    color:black;
+    
+    /* -- Notation Hexadécimale -- */
+    color:#000000;
+    color:#000;
+    
+    /* -- Notation Décimale -- */
+    color:rgb(000,000,000);
+    
+    /* -- Gérer le soulignement d'un Texte -- */
+    text-decoration: none;
+    
+    /* -- Modifier la Taille d'une Police -- */
+    font-size: 20px;
+    
+    /* -- Je souhaite que mes liens s'affiche en Majuscule -- */
+    text-transform: uppercase;
+}
+
+/* ---------------------
+Ici, je cible toutes les listes présent dans la div class header
+--------------------- */
+
+.header ul {
+    margin: 0;
+    padding: 0;
+}
+
+.header ul li {
+    display: inline-block;
+    /* -- WIDTH me permet de définir la largeur d'un élément --*/
+    width:317px;
+    /* -- Aligner mon text dans son élément -- */
+    text-align: center;
+}
+
+/* ---------------------
+Je souhaite que mes liens soient soulignés au passage de la souris.
+--------------------- */
+
+a:hover {
+    color:#dd0613;
+}
+
+/* ---------------------
+Je change la couleur de mon lien a l'intérieur de la classe current
+--------------------- */
+
+.current a {
+    color:#dd0613;
+}
+
+/* ---------------------
+
+    ### Cibler via son ID un Element ###
+    NB : Un ID ne peut-être présent qu'une seule fois sur une même page.
+
+    #LaClasse {
+        propriete:valeur;
+    }
+
+--------------------- */
+
+#page {
+    /* -- Je vais définir la largeur de ma page -- */
+    width: 960px;
+    
+    /* -- margin: <top/bottom> <left/right>; -- */
+    margin: 0 auto;
+    
+    /* -- Je Rajoute a ma page un fond blanc -- */
+    background: #FFF;
+}
+
+/* ---------------------
+Je souhaite changer la couleur du fond de ma page.
+--------------------- */
+
+body {
+    /* -- Je viens de changer la couleur du fond de ma page -- */
+    background-color: #EEE;
+}
+
+
+/* ---------------------
+
+CONSIGNE :
+
+    1 - A ma div#page, ajouter une marge top/bottom de 40px;
+    2 - Ajouter avec la propriété border-radius un arrondi de 5px a div#page
+    3 - Puis, grace a box-shadow, ajouter une ombre légère autour de div#page */
+
+
+#page {
+    /* -- margin: <top> <right> <bottom> <left>; -- */
+    margin: 80px auto 80px auto;
+    
+    /* -- border-radius me permet de rajouter un arondi à mon élément -- */
+    border-radius: 5px;
+    
+    /* -- Overflow avec la valeur hidden, va supprimer l'affichage des tous les éléments qui dépassent de la div#page -- */
+    overflow: hidden;
+    
+    /* -- J'applique une marge interne de 5px autour de la #page -- */
+    padding: 5px;
+    
+    /* -- J'applique une Ombre autour de ma div#page -- */
+    /* -- offset-x | offset-y | blur-radius | color -- */
+    box-shadow: 0px 0px 15px #CCC;
+}
+
+#contenu h1 {
+    /* -- Aligner mon titre au milieu -- */
+    text-align: center;
+    
+    /* -- Je ne souhaite pas que le texte soit en gras -- */
+    font-weight: normal;
+    
+    /* -- Je souhaite une bordure en bas de mon titre -- */
+    /* -- solid : Ligne par Défaut, dotted : Petits Points, dashed : des traits-d'union -- */
+    border-bottom: 1px dashed #000;
+}
+
+
+/* ---------------------
+CSS pour Illustration et Article
+--------------------- */
+
+.illustration {
+    width: 460px;
+    float: left;
+    position: relative;
+    margin-right:10px;
+}
+
+.illustration img {    
+    /* -- De cette façon, mon image prendra au maximum, la largeur de div.illustration -- */
+    max-width: 100%;
+}
+
+.article {
+    width: 460px;
+    float: left;
+    
+    font-family: Arial, sans-serif;
+    text-align: justify;
+    
+    margin: 0 10px 0 10px;
+}
+
+.contenu-page {
+    width: 940px;
+    float: left;
+    margin: 0 10px;
+    font-family: Arial, sans-serif;
+    text-align: justify;
+}
+
+.contenu-page strong, .article strong {
+    color:#dd0613;
+}
+
+.contenu-page img {
+    padding: 5px;
+    border: 1px solid #EEE;
+    border-radius: 5px;
+    
+    display: block;
+    margin: 0 auto;
+}
+
+#contenu {
+    width: 960px;
+    float:left;
+    margin-bottom: 20px;
+}
+
+/* ---------------------
+Style de mon PIED de PAGE
+--------------------- */
+
+#footer {
+    /* -- J'ai défini mon pied de page à 960px de largeur. -- */
+    width: 960px;
+    /* -- Une hauteur de 210px. -- */
+    height: 210px;
+    /* -- Positionnement sur la Gauche -- */
+    float: left;
+    /* -- Une Marge Interne en Haut de 10px  -- */
+    padding-top: 10px;
+    /* -- Une couleur de fond sombre -- */
+    background-color: #121315;
+}
+
+/* -- 
+Ici, je souhaite que mes 3 blocks soient positionné, les un à côté des autres, ...
+Mon pied de page étant à 960px, je divise par mon nombre de block (3) tous en tenant compte des marges.
+-- */
+
+.gmap {
+    width: 300px;
+    float:left;
+    margin-left: 10px;
+}
+
+.newsletter {
+    width: 310px;
+    float:left;
+    margin-left: 10px;
+}
+
+.newsletter fieldset {
+    font-family: 'Roboto Condensed', sans-serif;
+    border-radius: 8px;
+    border: 2px solid #FFF;
+    color:#FFF;
+    height: 180px;
+}
+
+.newsletter form input[type=email], .newsletter form input[type=text] {
+    width: 93%;
+    height: 25px;
+    border: 0;
+    margin-bottom: 5px;
+    padding: 5px 10px;
+}
+
+.newsletter form input[type=submit] {
+    width: 100%;
+    height: 35px;
+    margin-top: 10px;
+    border: 0;
+    background-color: #FFF;
+    font-size: 16px;
+    /* -- Font-weight pour passer mon texte en gras -- */
+    font-weight: bold;
+    cursor: pointer;
+}
+
+.contact {
+    width: 310px;
+    float:left;
+    margin-left: 10px;
+}
+
+.contact h3 {
+    text-align: center;
+    color:#FFF;
+    font-weight: normal;
+}
+
+.contact address {
+    color: #FFF;
+    font-style: normal;
+    font-family: 'Roboto Condensed', sans-serif;
+    padding-left: 20px
+}
+
+.contact address strong {
+    font-size: 20px;
+}
+
+.contact address a {
+    color: #FFF;
+    text-decoration: none;
+}
+
+.contact address a:hover {
+    text-decoration: underline;
+}
+
+/* -- 
+Style du Bandeau du Haut
+-- */
+
+.BandeauDuHaut {
+    width: 960px;
+    height: 359px;
+    position: relative;
+    /* -- Background URL me permet d'insérer une image en fond de mon element --*/
+    background: url(../img/bandeau-isen.jpg);
+}
+
+/* ---------------------
+PAGE CONTACT
+--------------------- */
+
+#register table input[type=text] {
+    width: 93%;
+    height: 25px;
+    border: 0;
+    margin-bottom: 5px;
+    padding: 5px 10px;
+    border: 1px solid #EEE;
+}
+
+/* ---------------------
+STYLE DU HEADER
+--------------------- */
+
+.informations {
+    width:220px;
+    height:220px;
+    /* -- Positionnement Absolu, relatif à la div.BandeauDuHaut -- */
+    position: absolute;
+    top : 50px;
+    right : 50px;
+    /* -- Couleur du Fond et Style d'affichage -- */
+    background-color: rgba(0, 0, 0, 0.8);
+    padding: 20px;
+}
+
+.informations p {
+    color:#FFF;
+    font-family: Arial, sans-serif;
+}
+
+.informations p span {
+    font-weight: bold;
+    font-size: 22px;
+}
+
+.logo {
+    position: absolute;
+    top:50px;
+    left:50px;
+}
+
+.loupe {
+    width: 40px;
+    position: absolute;
+    bottom: 10px;
+    right:10px;
+}
+
+/* ---------------------
+RECHERCHER UN CONTACT
+--------------------- */
+
+#search {
+	width: 100%;
+	height: 30px;
+	background-image: linear-gradient(0deg, #EEE 0%, #FFF 100%);
+	border:1px solid #EEE;
+	font-family: 'Roboto Condensed', sans-serif;
+	font-size: 15px;
+	text-indent: 10px;
+	margin-bottom: 10px;
+}
+.membre {
+	width:100%;
+	height: auto;
+	position: relative;
+	min-height: 200px;
+	/* -- */
+	background-image: linear-gradient(0deg, #EEE 0%, #FFF 100%);
+	border:1px solid #EEE;
+}
+.membre_informations {
+	width: 94%;
+	height: auto;
+	padding: 3%;
+	min-height: 120px;
+	/* -- */
+	font-family: 'Roboto Condensed', sans-serif;
+	font-size: 15px;
+}
+.membre a {
+	text-decoration: none;
+	color:#000;
+	display: block;
+	text-align: center;
+	text-transform: uppercase;
+	/* -- */
+	position:absolute;
+	left:50%;
+	bottom: 0px;
+	transform: translate(-50%, -50%);
+}

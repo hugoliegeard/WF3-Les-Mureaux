@@ -32,6 +32,8 @@ $(function () {
             </tr>
         `).appendTo($('#LesContacts > tbody'));
 
+        // $('<tr><td>'+ Contact.nom + '</td><td>' + Contact.prenom + '</td>...</tr>');
+
         // -- Réinitialisation du Formulaire
         reinitialisationDuFormulaire();
 
@@ -169,6 +171,7 @@ $(function () {
                 
                 if (unContactEstPresent(Contact)){
                     alert('Attention, ce contact existe déjà.');
+                    reinitialisationDuFormulaire();
                 }
                 else{
                     ajouterContact(Contact);
