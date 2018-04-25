@@ -1,0 +1,216 @@
+body {
+    background-color: #000;
+}
+
+/* ----------------------
+       NAVBAR APPLE
+---------------------- */
+
+.navbar-apple {
+    background-color: #1E1E1E;
+}
+
+.navbar-apple ul li {
+    margin: 0 15px;
+}
+
+.navbar-apple ul li a {
+    font-family: 'Roboto Condensed', sans-serif;
+    font-weight: 400;
+    text-align:center;
+}
+
+/* ----------------------
+    SECTION PRODUITS
+---------------------- */
+
+#produits {
+    background-color: #141414;
+}
+
+#produits ul {
+    text-align: center;
+    padding: 10px 0;
+}
+
+#produits ul li {
+    width: calc(100% / 2);
+}
+
+/* ----------------------
+    SECTION PROJECTEUR
+---------------------- */
+
+#projecteur {
+    padding-top: 40px;
+    text-align: center;
+}
+
+#projecteur img {
+    max-width: 100%;
+    margin: 20px 0 0 0;
+}
+
+#projecteur h2 {
+    color: #FFF;
+    font-family: 'Roboto Condensed', sans-serif;
+    font-weight: 400;
+    font-size: 50px;
+    margin: 0;
+} 
+
+#projecteur h3 {
+    color: #FFF;
+    font-family: 'Roboto', sans-serif;
+    font-weight: 100;
+    font-size: 60px;
+}
+
+#projecteur p {
+    color: #CCC;
+}
+
+#projecteur p > span {
+    font-size: 12px;
+}
+
+/* ----------------------
+   SECTION PRESENTATION
+---------------------- */
+
+#presentation {
+    background-image: linear-gradient(#FFF 0%, #EEE 60%);
+    padding: 40px 0 0 0;
+    text-align: center;
+}
+
+#presentation article h3 {
+    font-family: 'Roboto Condensed', sans-serif;
+    font-weight: 300;
+    font-size: 30px;
+    color: #303235;
+    margin: 40px 0;
+}
+
+#presentation article p {
+    margin: 40px 0;
+}
+
+#presentation article a {
+    margin-bottom: 40px;
+}
+
+/* ----------------------
+     SECTION CONTACT
+---------------------- */
+
+#contact {
+    padding: 50px 0;
+}
+
+#contact h3 {
+    font-family: 'Roboto Condensed', sans-serif;
+    font-weight: 400;
+    font-size: 40px;
+
+    text-align: center;
+    color: #FFF;
+    margin-bottom: 50px;
+}
+
+/* ~ Formulaire ~ */
+
+#contactForm input[type=email] {
+    margin-bottom: 15px;
+}
+
+/* ----------------------
+     SECTION FOOTER
+---------------------- */
+
+footer {
+    background-color: #1E1E1E;
+    padding: 10px 0;
+}
+
+footer p {
+    margin: 0;
+    text-align: center;
+    color: #FFF;
+    font-size:12px;
+}
+
+/*
+####################################################
+M E D I A  Q U E R I E S
+####################################################
+*/
+ 
+/*
+::::::::::::::::::::::::::::::::::::::::::::::::::::
+Bootstrap 4 breakpoints
+*/
+ 
+/* 
+Extra small devices (portrait phones, less than 544px) 
+No media query since this is the default in Bootstrap because it is "mobile first"
+*/
+ 
+ 
+/* Small devices (landscape phones, 544px and up) */
+@media (min-width: 544px) {  
+    #produits ul li {
+        width: calc(100% / 3);
+    }
+    #presentation article h3, 
+    #presentation article p {
+        margin: 20px 0;
+    }
+    
+    #presentation img {
+        position: absolute;
+        bottom: 0;
+        left: 0;
+    }
+}
+ 
+/* Medium devices (tablets, 768px and up) The navbar toggle appears at this breakpoint */
+@media (min-width: 768px) {  
+    #produits ul li {
+        width: calc(100% / 4);
+    } 
+    #presentation article h3, 
+    #presentation article p {
+        margin: 30px 0;
+    }
+}
+ 
+/* Large devices (desktops, 992px and up) */
+@media (min-width: 992px) { 
+    #produits ul li {
+        width: auto;
+    }
+    
+    #presentation article h3, 
+    #presentation article p {
+        margin: 40px 0;
+    }
+}
+ 
+/* Extra large devices (large desktops, 1200px and up) */
+@media (min-width: 1200px) {  
+    
+}
+ 
+/*
+::::::::::::::::::::::::::::::::::::::::::::::::::::
+Custom media queries
+*/
+ 
+@media (max-width: 575px) {
+    
+    #presentation img {
+        position: inherit;
+    }
+
+}
