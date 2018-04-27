@@ -1,0 +1,53 @@
+<div class="container">
+  <header class="mb-4">
+    <nav class="navbar navbar-dark bg-dark">
+      <div class="navbar-header">
+        <a href="/" class="navbar-brand">
+          <!-- Avec l'expression {{ }}
+          j'affiche le contenu de la
+          variable dans l'app. -->
+          {{ title }}
+        </a>
+      </div>
+    </nav>
+  </header>
+
+  <div class="row">
+    <div class="col-sm-4">
+      <ul class="list-group">
+        <a *ngFor="let contact of mesContacts"
+           (click)="choisirContact(contact)"
+           [class.active]="contact === contactActif"
+           class="list-group-item list-group-item-action"
+           href="javascript:void(0)">
+          {{ contact.name }}
+        </a>
+      </ul>
+      <pre>{{ mesContacts | json }}</pre>
+    </div>
+    <div class="col-sm-8">
+      <div class="jumbotron" *ngIf="contactActif">
+        <h1 class="display-4">
+          {{ contactActif.name }}
+        </h1>
+        <p class="lead">
+          {{ contactActif.username }}
+        </p>
+        <hr class="my-4">
+        <input type="text" class="form-control"
+          [(ngModel)]="contactActif.name">
+      </div>
+      <div class="jumbotron" *ngIf="!contactActif">
+        <h1 class="display-4">
+          Bienvenue !
+        </h1>
+        <p class="lead">
+          Choisissez un Contact...
+        </p>
+      </div>
+    </div>
+  </div>
+  <footer class="text-center">
+    Copyright &copy; 2018 - WF3 Les Mureaux.
+  </footer>
+</div>
