@@ -4,18 +4,9 @@
  * on importe "Component" via
  * @angular/core
  */
-import { Component } from '@angular/core';
-
-class Contact {
-  id: number;
-  name: string;
-  username: string;
-  email: string;
-  address?: object;
-  phone?: number;
-  website?: string;
-  company?: object;
-}
+import {Component, OnInit} from '@angular/core';
+import { Contact } from './models/contact';
+import {ContactApiService} from './services/contact-api.service';
 
 /**
  * @Component est ce qu'on appelle un
@@ -58,7 +49,10 @@ class Contact {
  * Dans notre contexte MVVM, notre classe
  * correspond au ViewModel.
  */
-export class AppComponent {
+export class AppComponent implements OnInit {
+
+  constructor(private contactApiService: ContactApiService) { }
+
   // -- Déclaration d'une Variable Titre
   title = 'Gestion de mes Contacts';
 
@@ -109,5 +103,39 @@ export class AppComponent {
   choisirContact(contactCliqueParMonUtilisateur) {
     this.contactActif = contactCliqueParMonUtilisateur;
     console.log(this.contactActif);
+  }
+
+  /**
+   * Fonction qui permet de rajouter
+   * un nouveau contact dans la liste.
+   * @param event
+   */
+  ajouterContactDansListe( event: any) {
+
+    console.log(event);
+
+    // -- Récupération du Contact via l'Evènement.
+    const leContact: Contact = event.leContact;
+
+    // -- Attribution d'un ID au Contact ( leContact )
+    leContact.id = Date.now();
+    // console.log(leContact);
+
+    // -- Ajout du Contact dans le Tableau
+    this.mesContacts.push(leContact);
+  }
+
+  /**
+   * La méthode ngOnInit est appelée
+   * automatiquement par Angular juste après
+   * le constructeur à l'initialisation de notre composant.
+   */
+  ngOnInit(): void {
+    this.contactApiService.getContacts().subscribe(
+      contacts  => {
+        console.log(contacts);
+        this.mesContacts = contacts;
+      }
+    );
   }
 }

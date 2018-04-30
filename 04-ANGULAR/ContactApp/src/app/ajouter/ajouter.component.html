@@ -1,0 +1,83 @@
+<form #form="ngForm"
+      *ngIf="active"
+      (ngSubmit)="submitContact();">
+
+  <!--form.reset();-->
+
+  <!--
+    Grâce à l'identifiant #form
+    plus haut, je peux connaitre
+    l'état de validation de mon
+    formulaire.
+  -->
+
+  <!--h5.text-center.m-4{Ajouter un Contact}-->
+  <h5 class="text-center m-4">
+    Ajouter un Contact
+  </h5>
+
+<!--  <pre>
+    {{ form.valid }}
+    {{ nouveauContact | json }}
+  </pre>-->
+
+  <!-- Nom Complet -->
+  <div class="form-group">
+    <input type="text" required
+           class="form-control"
+           placeholder="Saisissez votre nom complet..."
+           name="fullname"
+           #fullname="ngModel"
+           [(ngModel)]="nouveauContact.name"
+           [class.is-invalid]="fullname.touched && fullname.invalid"
+           [class.is-valid]="fullname.valid">
+    <div class="invalid-feedback">
+      Vous devez saisir votre nom complet.
+    </div>
+    <div class="valid-feedback">
+      Correct
+    </div>
+  </div>
+
+  <!-- Username -->
+  <div class="form-group">
+    <input type="text" required
+           class="form-control"
+           placeholder="Saisissez votre pseudo..."
+           name="username" #username="ngModel"
+           [(ngModel)]="nouveauContact.username"
+           [class.is-invalid]="username.touched && username.invalid"
+           [class.is-valid]="username.valid">
+    <div class="invalid-feedback">
+      Vous devez saisir votre pseudo.
+    </div>
+    <div class="valid-feedback">
+      Correct
+    </div>
+  </div>
+
+  <!-- Email -->
+  <div class="form-group">
+    <input type="email" required
+           class="form-control"
+           placeholder="Saisissez votre email..."
+           name="email" #email="ngModel"
+           [(ngModel)]="nouveauContact.email"
+           [class.is-invalid]="email.touched && email.invalid"
+           [class.is-valid]="email.valid"
+           pattern="^[a-z0-9._%+-]+@[a-z0-9.-]+\.[a-z]{2,5}$">
+    <div class="invalid-feedback">
+      Vous devez saisir votre email.
+    </div>
+    <div class="valid-feedback">
+      Correct
+    </div>
+  </div>
+
+  <!-- Submit -->
+  <button class="btn btn-block btn-primary"
+          [disabled]="form.invalid">
+    Ajouter le Contact
+  </button>
+
+</form>
