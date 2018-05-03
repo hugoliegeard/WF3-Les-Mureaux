@@ -1,0 +1,69 @@
+<div class="container p-0">
+
+  <!-- Header -->
+  <header>
+    <nav class="navbar navbar-dark bg-dark">
+      <span class="navbar-brand mb-0 h1">
+        Mes tâches à faire
+      </span>
+      <app-add (newTaskEvent)="newTask($event)"></app-add>
+    </nav>
+  </header>
+
+  <!-- TodoList -->
+
+  <div class="row m-0">
+    <div class="col">
+      <div class="todolist not-done">
+        <h1>A faire</h1>
+        <hr>
+        <ul id="sortable" class="list-unstyled">
+
+          <li class="ui-state-default"
+            *ngFor="let task of tasks | taskFilter : false">
+
+            <div class="checkbox">
+              <label>
+
+                <input type="checkbox"
+                  [checked]="task.status"
+                  (click)="taskIsDone(task)">
+                {{ task.title }}
+
+              </label>
+            </div>
+
+          </li>
+
+        </ul>
+
+        <div class="todo-footer bg-dark text-white">
+          <strong>
+            {{ (tasks | taskFilter : false).length }}
+          </strong>
+          tâches restantes.
+        </div>
+
+      </div>
+    </div>
+    <div class="col todo-right">
+      <div class="todolist">
+        <h1>Terminées</h1>
+        <hr>
+        <ul id="done-items" class="list-unstyled">
+          <li
+            *ngFor="let task of tasks | taskFilter : true">
+            {{ task.title }}
+            <button type="button"
+                    class="close"
+                    (click)="removeTask(task)"
+                    aria-label="Close">
+              <span>&times;</span>
+            </button>
+          </li>
+        </ul>
+      </div>
+    </div>
+  </div>
+
+</div>

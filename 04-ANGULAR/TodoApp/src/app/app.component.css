@@ -1,0 +1,47 @@
+body{
+  background-color:#EEEEEE;
+}
+.todolist{
+  padding:20px 20px 10px 20px;
+  margin-top:30px;
+}
+.todolist h1{
+  margin:0;
+  padding-bottom:20px;
+  text-align:center;
+}
+li.ui-state-default{
+  background-image:linear-gradient(360deg, #EEEEEE, #FFFFFF);
+  border:none;
+  height: 35px;
+  line-height: 33px;
+  padding-left: 15px;
+  border-bottom:1px solid #ddd;
+}
+li.ui-state-default:last-child{
+  border-bottom:none;
+}
+li label > input {
+  margin-right: 5px;
+}
+.todo-right {
+  background: #EEEEEE;
+}
+.todo-footer{
+  margin:0 -20px -10px -20px;
+  padding: 10px 20px;
+}
+#done-items li{
+  padding:10px 0;
+  border-bottom:1px solid #ddd;
+  text-decoration:line-through;
+}
+#done-items li:last-child{
+  border-bottom:none;
+}
+#checkAll{
+  margin-top:10px;
+}
+header {
+  margin-top: 60px;
+}
